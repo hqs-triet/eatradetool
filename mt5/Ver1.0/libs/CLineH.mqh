@@ -97,8 +97,14 @@ class CLineH: public CObject
         {
             if(m_lineObject != NULL)
                 m_lineObject.Delete();
+            if(ObjectFind(0, m_lineId) >= 0)
+                ObjectDelete(0, m_lineId);
+                
             if(m_lineTextObject != NULL)
                 m_lineTextObject.Delete();
+            if(ObjectFind(0, m_lineTitleId) >= 0)
+                ObjectDelete(0, m_lineTitleId);
+                
         }
         double Price()
         {
